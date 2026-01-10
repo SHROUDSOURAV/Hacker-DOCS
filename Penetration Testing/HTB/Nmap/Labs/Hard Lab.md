@@ -1,5 +1,6 @@
 
 - Now our client wants to know if it is possible to find out the version of the running services. Identify the version of service our client was talking about and submit the flag as the answer.
+	- **HTB{redacted}**
 
 
 ```bash
