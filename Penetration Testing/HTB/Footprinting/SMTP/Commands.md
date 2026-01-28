@@ -31,7 +31,7 @@ telnet <TARGET IP> -v
 - First authenticate yourself to the SMTP server.
 - Start the mail body using `DATA` command as mentioned in the table.
 - Write your mail.
-- When mail is done writing Press **Enter** and go to a complete **newline** and Press **fullstop**(`.`)
+- When mail is done writing Press **Enter** and go to a complete **newline** and Press **fullstop**(`.`) and again Press **Enter**.
 - `.` signifies the end of the mail body.
 
 ## VRFY Command
