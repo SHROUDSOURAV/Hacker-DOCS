@@ -38,7 +38,7 @@ telnet <TARGET IP> -v
 
 - `VRFY` Command can be used to enumerate users in the server but depending on the SMTP configuration the server might give a status code that may indicate the presence of the user even if it doesn't exist in the server.
 
-## SMTP Status Codes
+## SMTP Status Coes
 
 - [SMTP Status Codes](https://serversmtp.com/smtp-error/)
 
