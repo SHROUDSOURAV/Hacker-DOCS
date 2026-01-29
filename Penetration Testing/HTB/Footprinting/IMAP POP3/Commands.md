@@ -8,7 +8,7 @@ sudo nmap <TARGET IP> -sV -p110,143,993,995 -sC
 ## Log into IMAP
 
 ```bash
-curl -k 'imaps://<TARGET IP>' --user <user>:<password>
+curl -k 'imaps://<TARGET IP>' --user <username>:<password> -v
 ```
 
 ## Connect to IMAP
