@@ -38,3 +38,27 @@ mynetworks = 0.0.0.0/0
 ---
 ## Questions and Solutions
 
+- Enumerate the SMTP service and submit the banner, including its version as the answer.
+	- **InFreight ESMTP v2.11**
+
+### Banner Grabbing
+
+Performing SMTP banner grabbing using `telnet`.
+
+```bash
+$ telnet 10.129.16.100 25
+Trying 10.129.16.100...
+Connected to 10.129.16.100.
+Escape character is '^]'.
+220 InFreight ESMTP v2.11
+```
+
+- Enumerate the SMTP service even further and find the username that exists on the system. Submit it as the answer.
+	- **robin**
+
+The challenge provided us a **wordlist** file so use that wordlist instead. We are going to be using that wordlist with the `smtp-user-enum` tool to enumerate users on the target server.
+
+```bash
+$ smtp-user-enum -M VRFY -U users.txt -t 10.129.16.100 -w 20 -v
+```
+

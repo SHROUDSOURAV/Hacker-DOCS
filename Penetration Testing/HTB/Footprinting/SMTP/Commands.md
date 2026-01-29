@@ -8,7 +8,16 @@ sudo nmap <TARGET IP> -sC -sV -p25
 ## Connect to SMTP Server
 
 ```bash
-telnet <TARGET IP> -v
+telnet <TARGET IP> 25
+```
+
+## Enumerate SMTP Users
+
+- Use the VRFY method (`-M VRFY`) to check each individual users in the **user wordlist** on the target server.
+- `-w` is for query timeout given to the server before moving to a new user in the **user wordlist**
+
+```bash
+smtp-user-enum -M VRFY -U <user wordlist> -t <TARGET IP> -w <query timeout> -v
 ```
 
 ## SMTP Server Commands
