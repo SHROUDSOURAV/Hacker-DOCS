@@ -20,7 +20,7 @@
 
 ## IMAP/POP3 Configurations
 
-### Dangerous Configurations
+### Dangerous Settings
 
 |**Setting**|**Description**|
 |---|---|
