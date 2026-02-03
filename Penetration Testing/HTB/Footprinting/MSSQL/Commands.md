@@ -36,7 +36,7 @@ pip install -r requirements.txt
 pip install .
 ```
 
-### How to Run
+### mssqlclient.py Location
 
 - After the setup procedure the `mssqlclient.py` will be inside `impacket/examples/mssqlclient.py`.
 - So move or copy that file into your current working directory and then run the command to connect to the MSSQL server.
