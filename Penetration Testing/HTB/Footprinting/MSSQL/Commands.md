@@ -19,7 +19,7 @@ run
 ## Connect to MSSQL
 
 ```bash
-python3 mssqlclient.py <username>@10.129.201.248 -windows-auth
+python3 mssqlclient.py <username>@<TARGET IP> -windows-auth
 ```
 
 ### Setup for mssqlclient.py
