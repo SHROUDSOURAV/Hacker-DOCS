@@ -10,6 +10,7 @@
 ## Oracle Database SID
 
 - In Oracle RDBMS, a System Identifier (`SID`) is a unique name that identifies a particular database instance. The instance is a set of processes and memory structures that interact to manage database data.
+- This SID defines the new instance. So the same database can have multiple instances or maybe talking about different databases.
 
 ## Oracle TNS Configurations
 
