@@ -22,7 +22,7 @@ sudo nmap -p1521 -sV <TARGET IP> --open --script oracle-sid-brute
 - It can also be used to find SIDs of the Oracle Database.
 
 ```bash
-odat all -s <TARGET IP>
+sudo odat all -s <TARGET IP>
 ```
 
 ## Log in Oracle Database
