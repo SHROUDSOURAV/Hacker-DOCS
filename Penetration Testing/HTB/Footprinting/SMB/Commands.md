@@ -1,4 +1,10 @@
+## Non Anonymous Share Listing
 
+- password for the user may be prompted later.
+
+```bash
+smbclient -U <username> -L //<TARGET IP>
+```
 ## Anonymous Share Listing
 
 - `-N` is for NULL session or anonymous access without username or password.
@@ -16,10 +22,16 @@ nxc smb <TARGET IP> --shares -u '' -p ''
 
 ## Connecting to Share
 
-- Connecting to a share may require a password and username.
-
 ```bash
 smbclient //<TARGET IP>/<share_name>
+```
+
+**OR**
+
+- May require a password. The below command incase a certain share is only accessible by a particular user.
+
+```bash
+smbclient -U <username> //<TARGET IP>/<share_name>
 ```
 
 ## Download files from SMB
