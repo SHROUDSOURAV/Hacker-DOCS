@@ -15,7 +15,7 @@ grep <keyword> show payloads
 
 - Select the `exploit` module first then the `payload`
 - `exploit` module will exploit the vulnerability and `payload` is something we do once we exploit the particular vulnerability service on that target.
-- You can check the payload selected after selecting you `exploit` module using `show options` command.
+- You can check the payload selected after selecting your `exploit` module using `show options` command.
 
 ```bash
 set payload <payload_name/payload_index_no>
