@@ -169,9 +169,9 @@ db_nmap -sV -p- -T5 -A <TARGET IP> #inside msfconsole
 
 ### Priv: Password Database Commands
 
-|Command|Description|
-|---|---|
-|`hashdump`|Dumps the contents of the SAM database|
+| Command    | Description                            |
+| ---------- | -------------------------------------- |
+| `hashdump` | Dumps the contents of the SAM database |
 
 ### Priv: Timestamp Commands
 
