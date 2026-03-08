@@ -2,7 +2,7 @@
 ## Command Workflow
 
 - Find SNMP OIDs. OIDs provide us the exact setting we need to access of the network device. In those OIDs there also might be some value or important string stored.
-- To query against an OID we need Community String. So find Community String and then run against the SNMP service which we dump the MIB database info corresponding to the community string.
+- To query against an OID we need Community String. So find Community String and then run against the SNMP service which will dump the MIB database info corresponding to the community string.
 
 ## Footprinting the Service
 
