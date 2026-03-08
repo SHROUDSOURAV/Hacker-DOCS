@@ -80,4 +80,3 @@ $ sudo mount -t nfs 10.129.202.5:/mnt/nfsshare ./nfsshare/ -nolock
 ```
 
 Read the NFS shares to get the flag.
-
