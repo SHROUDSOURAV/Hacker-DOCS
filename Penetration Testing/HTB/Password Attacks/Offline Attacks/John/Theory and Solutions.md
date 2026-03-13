@@ -15,7 +15,7 @@ r0lf:$6$ues25dIanlctrWxg$nZHVz2z4kCy1760Ee28M1xtHdGoy0C2cYzZ8l2sVa1kIa8K9gAcdBP.
 Based on the contents of the file, it can be inferred that the victim has the username `r0lf`, the real name `Rolf Sebastian`, and the home directory `/home/r0lf`. Single crack mode will use this information to generate candidate passwords and test them against the hash. 
 
 
-## Wordlist Mode
+### Wordlist Mode
 
 - Used to crack passwords with a dictionary attack.
 - Basically attempting all passwords supplied in the wordlist against the password hash.
