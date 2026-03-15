@@ -1,3 +1,11 @@
+
+## Bruteforce Attack
+
+```bash
+hydra -L <user/user wordlist> -P <password/password wordlist> smb://TARGET IP
+```
+
+
 ## Non Anonymous Share Listing
 
 - password for the user may be prompted later.
