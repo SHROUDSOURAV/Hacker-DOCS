@@ -10,7 +10,14 @@ netexec winrm <TARGET IP> -u <username/user wordlist> -p <password/password word
 ### Login WinRM
 
 ```bash
-evil-winrm -i <TARGET IP> -u <username> -p <password>
+evil-winrm -i <TARGET IP> -u <username>
+```
+
+## SMB Exploitation
+## Bruteforce Attack SMB
+
+```bash
+hydra -L <user/user wordlist> -P <password/password wordlist> smb://TARGET IP
 ```
 
 
@@ -30,3 +37,10 @@ hydra -L <username/user wordlist> -P <password/password wordlist> ssh://<TARGET 
 ```bash
 hydra -L <username/user wordlist> -P <password/password wordlist> rdp://<TARGET IP>
 ```
+
+### Logging into RDP
+
+```bash
+xfreerdp3 /v:<TARGET IP> /u:<username> /p:"<password>"
+```
+
