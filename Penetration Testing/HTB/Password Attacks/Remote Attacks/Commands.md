@@ -44,3 +44,23 @@ hydra -L <username/user wordlist> -P <password/password wordlist> rdp://<TARGET 
 xfreerdp3 /v:<TARGET IP> /u:<username> /p:"<password>"
 ```
 
+
+## Default Credentials
+
+### Install
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip3 install defaultcreds-cheat-sheet
+```
+
+### Search Credentials
+
+```bash
+creds search <service name>
+```
+
+**Example** : `creds search mysql`
+
+
