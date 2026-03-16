@@ -2,7 +2,7 @@
 ## Bruteforce Attack
 
 ```bash
-hydra -L <user/user wordlist> -P <password/password wordlist> smb://TARGET IP
+netexec smb <TARGET IP> -u <user/user wordlist> -p <password/password wordlist>
 ```
 
 
@@ -13,6 +13,13 @@ hydra -L <user/user wordlist> -P <password/password wordlist> smb://TARGET IP
 ```bash
 smbclient -U <username> -L //<TARGET IP>
 ```
+
+**OR**
+
+```bash
+netexec smb <TARGET IP> -u "<username>" -p "<password>" --shares
+```
+
 ## Anonymous Share Listing
 
 - `-N` is for NULL session or anonymous access without username or password.
