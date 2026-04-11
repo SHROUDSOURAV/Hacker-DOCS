@@ -2,7 +2,8 @@ import { getAllMarkdownSlugs, getMarkdownContent } from "@/lib/markdown";
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github-dark.css';
+import 'highlight.js/styles/atom-one-dark.css'; // Switch to a deeper hacker theme
+import { CodeBlock } from '@/components/CodeBlock';
 
 export function generateStaticParams() {
   const slugs = getAllMarkdownSlugs();
@@ -12,7 +13,8 @@ export function generateStaticParams() {
 }
 
 export default function MarkdownPage({ params }: { params: { slug: string[] } }) {
-  const content = getMarkdownContent(params.slug);
+  const decodedSlug = params.slug.map((s) => decodeURIComponent(s));
+  const content = getMarkdownContent(decodedSlug);
 
   if (!content) {
     return (
@@ -28,6 +30,9 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
       <Markdown 
         remarkPlugins={[remarkGfm]} 
         rehypePlugins={[rehypeHighlight]}
+        components={{
+          pre: ({ node, ...props }) => <CodeBlock {...props} />
+        }}
       >
         {content}
       </Markdown>

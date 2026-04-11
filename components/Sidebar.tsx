@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Folder, FileText, ChevronDown, ChevronRight, Menu } from 'lucide-react';
+import { Folder, FileTerminal, ChevronDown, ChevronRight, Menu, Shield } from 'lucide-react';
 import { useState } from 'react';
 import type { FileNode } from '@/lib/markdown';
 
@@ -16,15 +16,15 @@ function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
       <div className="w-full">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center w-full py-1.5 px-3 text-sm rounded-md transition-colors hover:bg-secondary/50 text-muted-foreground hover:text-foreground`}
+          className="flex items-center w-full py-2 px-3 text-sm rounded-none transition-all hover:bg-primary/5 text-muted-foreground hover:text-primary hover:translate-x-1 outline-none focus-visible:ring-1 focus-visible:ring-primary"
           style={{ paddingLeft: `${Math.max(0.75, level * 1)}rem` }}
         >
-          {isOpen ? <ChevronDown className="w-4 h-4 mr-1 opacity-50" /> : <ChevronRight className="w-4 h-4 mr-1 opacity-50" />}
-          <Folder className="w-4 h-4 mr-2 opacity-70" />
-          <span className="truncate">{node.name}</span>
+          {isOpen ? <ChevronDown className="w-3 h-3 mr-1.5 opacity-70" /> : <ChevronRight className="w-3 h-3 mr-1.5 opacity-70" />}
+          <Folder className={`w-3.5 h-3.5 mr-2 transition-colors ${isOpen ? 'text-primary opacity-80' : 'opacity-50'}`} />
+          <span className="truncate font-mono tracking-tight">{node.name}</span>
         </button>
         {isOpen && node.children && (
-          <div className="mt-1 flex flex-col gap-0.5">
+          <div className="flex flex-col relative before:absolute before:left-3 before:top-0 before:bottom-0 before:w-[1px] before:bg-border/50">
             {node.children.map((child) => (
               <TreeNode key={child.path} node={child} level={level + 1} />
             ))}
@@ -37,15 +37,15 @@ function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
   return (
     <Link
       href={node.path}
-      className={`flex items-center w-full py-1.5 px-3 text-sm rounded-md transition-colors ${
+      className={`flex items-center w-full py-1.5 px-3 text-sm rounded-none transition-all relative outline-none focus-visible:ring-1 focus-visible:ring-primary ${
         isActive
-          ? 'bg-secondary text-foreground font-medium'
-          : 'hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
+          ? 'bg-primary/10 text-primary font-medium shadow-[inset_2px_0_0_var(--tw-colors-primary)] before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent'
+          : 'hover:bg-primary/5 text-muted-foreground hover:text-foreground hover:translate-x-1 hover:shadow-[inset_2px_0_0_var(--tw-colors-primary)]'
       }`}
       style={{ paddingLeft: `${Math.max(0.75, level * 1 + 1.25)}rem` }}
     >
-      <FileText className="w-4 h-4 mr-2 opacity-70" />
-      <span className="truncate">{node.name}</span>
+      <FileTerminal className={`w-3.5 h-3.5 mr-2 ${isActive ? 'text-primary' : 'opacity-50'}`} />
+      <span className="truncate font-mono tracking-tight">{node.name}</span>
     </Link>
   );
 }
@@ -56,7 +56,7 @@ export function Sidebar({ nodes }: { nodes: FileNode[] }) {
   return (
     <>
       <button 
-        className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-secondary text-foreground rounded-md border border-border"
+        className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)]"
         onClick={() => setMobileOpen(!mobileOpen)}
       >
         <Menu className="w-5 h-5" />
@@ -64,29 +64,42 @@ export function Sidebar({ nodes }: { nodes: FileNode[] }) {
 
       <aside className={`
         fixed inset-y-0 left-0 z-40
-        w-64 bg-background border-r border-border
-        transform transition-transform duration-200 ease-in-out lg:translate-x-0
-        ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
-        flex flex-col h-screen
+        w-64 bg-[#050505] border-r border-border
+        transform transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] lg:translate-x-0
+        ${mobileOpen ? 'translate-x-0 shadow-[0_0_30px_hsl(133_100%_45%_/_0.15)]' : '-translate-x-full'}
+        flex flex-col h-screen overflow-hidden
       `}>
-        <div className="p-4 border-b border-border">
-          <Link href="/" className="flex items-center gap-2 font-bold text-lg text-foreground">
-            <span className="bg-foreground text-background px-2 py-1 rounded-md text-xs">DOCS</span>
-            Hacker Docs
+        <div className="p-5 border-b border-border bg-[#0a0a0a] relative overflow-hidden group">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,255,100,0.03)_50%,transparent_75%,transparent_100%)] bg-[length:250px_250px] animate-[gradient_3s_linear_infinite] pointer-events-none"></div>
+          <Link href="/" className="flex items-center gap-3 font-bold text-lg text-foreground relative z-10 transition-colors hover:text-primary">
+            <div className="p-1.5 bg-primary/10 rounded border border-primary/30 text-primary group-hover:shadow-[0_0_10px_hsl(133_100%_45%_/_0.5)] transition-shadow">
+              <Shield className="w-4 h-4" />
+            </div>
+            <span className="font-mono tracking-widest text-[15px]">HACKER_DOCS</span>
           </Link>
         </div>
         
-        <div className="flex-1 overflow-y-auto p-3 flex flex-col gap-1">
+        <div className="flex-1 overflow-y-auto pt-2 pb-6 flex flex-col gap-[1px]">
+          {/* Subtle terminal lines styling */}
+          <div className="text-[10px] text-primary/40 font-mono px-4 py-2 uppercase tracking-widest pointer-events-none">
+            Directory Listing
+          </div>
           {nodes.map(node => (
             <TreeNode key={node.path} node={node} />
           ))}
+        </div>
+
+        {/* Footer info readout */}
+        <div className="p-3 border-t border-border bg-[#0a0a0a] text-[10px] font-mono text-muted-foreground/60 flex justify-between items-center">
+          <span>PORT: 3000</span>
+          <span>SYSTEM ENABLED</span>
         </div>
       </aside>
       
       {/* Mobile overlay */}
       {mobileOpen && (
         <div 
-          className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-30"
+          className="lg:hidden fixed inset-0 bg-background/90 backdrop-blur-sm z-30 transition-opacity"
           onClick={() => setMobileOpen(false)}
         />
       )}
