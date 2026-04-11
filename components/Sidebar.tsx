@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Folder, FileTerminal, ChevronDown, ChevronRight, Menu, Shield } from 'lucide-react';
+import { Folder, FileTerminal, ChevronDown, ChevronRight, Menu, Shield, PanelLeftClose } from 'lucide-react';
 import { useState } from 'react';
 import type { FileNode } from '@/lib/markdown';
 
@@ -50,7 +50,13 @@ function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
   );
 }
 
-export function Sidebar({ nodes }: { nodes: FileNode[] }) {
+interface SidebarProps {
+  nodes: FileNode[];
+  isDesktopOpen?: boolean;
+  setDesktopOpen?: (val: boolean) => void;
+}
+
+export function Sidebar({ nodes, isDesktopOpen = true, setDesktopOpen }: SidebarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -65,11 +71,13 @@ export function Sidebar({ nodes }: { nodes: FileNode[] }) {
       <aside className={`
         fixed inset-y-0 left-0 z-40
         w-64 bg-[#050505] border-r border-border
-        transform transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] lg:translate-x-0
+        transform transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+        lg:translate-x-0
         ${mobileOpen ? 'translate-x-0 shadow-[0_0_30px_hsl(133_100%_45%_/_0.15)]' : '-translate-x-full'}
+        ${isDesktopOpen ? 'lg:translate-x-0' : 'lg:-translate-x-full'}
         flex flex-col h-screen overflow-hidden
       `}>
-        <div className="p-5 border-b border-border bg-[#0a0a0a] relative overflow-hidden group">
+        <div className="p-5 border-b border-border bg-[#0a0a0a] relative overflow-hidden group flex justify-between items-center">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,255,100,0.03)_50%,transparent_75%,transparent_100%)] bg-[length:250px_250px] animate-[gradient_3s_linear_infinite] pointer-events-none"></div>
           <Link href="/" className="flex items-center gap-3 font-bold text-lg text-foreground relative z-10 transition-colors hover:text-primary">
             <div className="p-1.5 bg-primary/10 rounded border border-primary/30 text-primary group-hover:shadow-[0_0_10px_hsl(133_100%_45%_/_0.5)] transition-shadow">
@@ -77,6 +85,17 @@ export function Sidebar({ nodes }: { nodes: FileNode[] }) {
             </div>
             <span className="font-mono tracking-widest text-[15px]">HACKER_DOCS</span>
           </Link>
+          
+          {/* Hide button on desktop */}
+          {setDesktopOpen && (
+             <button 
+               onClick={() => setDesktopOpen(false)}
+               className="relative z-10 p-1.5 border border-primary/20 hover:bg-primary/10 hover:border-primary/50 text-muted-foreground hover:text-primary rounded hidden lg:flex outline-none focus-visible:ring-1 focus-visible:ring-primary"
+               title="Minimize Sidebar"
+             >
+               <PanelLeftClose className="w-4 h-4" />
+             </button>
+          )}
         </div>
         
         <div className="flex-1 overflow-auto pt-2 pb-6 flex flex-col gap-[1px]">
