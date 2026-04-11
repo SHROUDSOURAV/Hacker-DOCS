@@ -41,7 +41,12 @@ export default function Home() {
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeHighlight]}
             components={{
-              pre: ({ node, ...props }) => <CodeBlock {...props} />
+              pre: ({ node, ...props }) => <CodeBlock {...props} />,
+              table: ({ node, ...props }) => (
+                <div className="w-full overflow-x-auto my-6 border border-border rounded-lg shadow-sm">
+                  <table className="w-full text-sm text-left m-0" {...props} />
+                </div>
+              )
             }}
           >
             {content}
