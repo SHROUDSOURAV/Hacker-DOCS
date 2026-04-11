@@ -9,7 +9,7 @@ import type { FileNode } from '@/lib/markdown';
 function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
   const [isOpen, setIsOpen] = useState(true);
   const pathname = usePathname();
-  const isActive = pathname === `/${node.path}` || pathname === encodeURI(`/${node.path}`);
+  const isActive = pathname === node.path || pathname === encodeURI(node.path);
 
   if (node.type === 'directory') {
     return (
@@ -36,7 +36,7 @@ function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
 
   return (
     <Link
-      href={`/${node.path}`}
+      href={node.path}
       className={`flex items-center w-full py-1.5 px-3 text-sm rounded-md transition-colors ${
         isActive
           ? 'bg-secondary text-foreground font-medium'

@@ -4,19 +4,15 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css';
 
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const slugs = getAllMarkdownSlugs();
   return slugs.map((slug) => ({
-    slug: slug.map(encodeURIComponent),
+    slug: slug,
   }));
 }
 
 export default function MarkdownPage({ params }: { params: { slug: string[] } }) {
-  // Decode the parameters that might be URL encoded
-  const decodedSlug = params.slug.map(decodeURIComponent);
-  const content = getMarkdownContent(decodedSlug);
+  const content = getMarkdownContent(params.slug);
 
   if (!content) {
     return (
