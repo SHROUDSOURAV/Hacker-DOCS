@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Next.js Markdown Documentation site",
   "scripts": {
+    "predev": "node scripts/copy-assets.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/copy-assets.mjs",
     "build": "next build",
     "start": "next start"
   },

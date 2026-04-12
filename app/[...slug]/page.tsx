@@ -43,9 +43,14 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
             if (src && !src.startsWith('http') && !src.startsWith('/')) {
               const dirParts = decodedSlug.slice(0, -1);
               const resolvedPath = path.posix.join('/', ...dirParts, src);
-              src = `/api/assets${resolvedPath}`;
+              src = `/assets${resolvedPath}`;
             } else if (src.startsWith('/')) {
-              src = `/api/assets${src}`;
+               // if it starts with /api/assets, fix it
+               if (src.startsWith('/api/assets')) {
+                  src = src.replace('/api/assets', '/assets');
+               } else if (!src.startsWith('/assets')) {
+                  src = `/assets${src}`;
+               }
             }
             return (
               /* eslint-disable-next-line @next/next/no-img-element */
