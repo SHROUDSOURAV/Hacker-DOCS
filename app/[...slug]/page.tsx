@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/atom-one-dark.css'; // Switch to a deeper hacker theme
 import { CodeBlock } from '@/components/CodeBlock';
+import path from 'path';
 
 export function generateStaticParams() {
   const slugs = getAllMarkdownSlugs();
@@ -36,7 +37,26 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
             <div className="w-full overflow-x-auto my-6 border border-border rounded-lg shadow-sm">
               <table className="w-full text-sm text-left m-0" {...props} />
             </div>
-          )
+          ),
+          img: ({ node, ...props }) => {
+            let src = props.src || '';
+            if (src && !src.startsWith('http') && !src.startsWith('/')) {
+              const dirParts = decodedSlug.slice(0, -1);
+              const resolvedPath = path.posix.join('/', ...dirParts, src);
+              src = `/api/assets${resolvedPath}`;
+            } else if (src.startsWith('/')) {
+              src = `/api/assets${src}`;
+            }
+            return (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img 
+                {...props} 
+                src={src} 
+                alt={props.alt || 'Documentation Image'} 
+                className="max-w-full h-auto rounded-md border border-border shadow-sm my-4" 
+              />
+            );
+          }
         }}
       >
         {content}
