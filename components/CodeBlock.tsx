@@ -26,7 +26,7 @@ export function CodeBlock({ children, className }: CodeBlockProps) {
 
   // Sometimes rehype packages wrap content in extra elements.
   // The classname comes from the <code> element usually, but if it's on <pre>, it might be passed here.
-  let language = 'text';
+  let language = 'bash';
   React.Children.forEach(children, (child) => {
     if (React.isValidElement(child) && child.props.className) {
       const match = /language-(\w+)/.exec(child.props.className || '');

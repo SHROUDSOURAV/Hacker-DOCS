@@ -52,6 +52,10 @@
 /* Base markdown styles modifying the typography layout */
 .prose {
   color: hsl(var(--foreground)) !important;
+  line-height: 1.75;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
@@ -65,6 +69,24 @@
 .prose h1 {
   @apply text-primary pb-2 border-b border-border mb-6;
   text-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+}
+
+.prose p,
+.prose li {
+  color: hsl(var(--foreground) / 0.95) !important;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose code {
+  font-family: var(--font-fira-code), monospace;
+}
+
+.prose pre {
+  white-space: pre;
 }
 
 .prose a {
@@ -115,6 +137,39 @@
   max-width: 100%;
   border: 1px solid hsl(var(--border));
   box-shadow: 0 0 20px hsl(var(--primary) / 0.05);
+}
+
+/* Mobile readability improvements without changing visual style */
+@media (max-width: 768px) {
+  .prose {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .prose h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose h2 {
+    font-size: 1.35rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .prose h3 {
+    font-size: 1.15rem;
+    margin-top: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose pre {
+    font-size: 0.8rem;
+  }
+
+  .prose table {
+    font-size: 0.82rem;
+  }
 }
 
 /* Custom scrollbars */
