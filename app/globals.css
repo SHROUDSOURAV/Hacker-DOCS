@@ -85,6 +85,10 @@
   font-family: var(--font-fira-code), monospace;
 }
 
+.prose :not(pre) > code {
+  color: hsl(var(--primary));
+}
+
 .prose pre {
   white-space: pre;
 }
