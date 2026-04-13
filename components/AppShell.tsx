@@ -1,40 +1,69 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { FileNode } from '@/lib/markdown';
-import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 
 export function AppShell({ nodes, children }: { nodes: FileNode[], children: React.ReactNode }) {
-  // Mobile sidebar is naturally closed, Desktop is naturally open
-  const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [sidebarWidth, setSidebarWidth] = useState(256);
+  const [isResizing, setIsResizing] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const updateViewport = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    updateViewport();
+    window.addEventListener('resize', updateViewport);
+    return () => window.removeEventListener('resize', updateViewport);
+  }, []);
+
+  useEffect(() => {
+    if (!isResizing) {
+      return;
+    }
+
+    const MIN_WIDTH = 220;
+    const MAX_WIDTH = 520;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const nextWidth = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, event.clientX));
+      setSidebarWidth(nextWidth);
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isResizing]);
 
   return (
     <>
       <Sidebar 
         nodes={nodes} 
-        isDesktopOpen={isDesktopSidebarOpen} 
-        setDesktopOpen={setIsDesktopSidebarOpen} 
+        isOpen={isSidebarOpen}
+        setOpen={setIsSidebarOpen}
+        width={sidebarWidth}
+        onResizeStart={(event) => {
+          event.preventDefault();
+          setIsResizing(true);
+        }}
       />
       
       <main 
-        className={`flex-1 w-full h-screen overflow-hidden flex flex-col relative z-0 transition-all duration-300 ease-in-out ${isDesktopSidebarOpen ? 'lg:ml-64' : 'ml-0'}`}
+        className="flex-1 w-full h-screen overflow-hidden flex flex-col relative z-0 transition-all duration-300 ease-in-out"
+        style={{ marginLeft: isSidebarOpen && isDesktop ? `${sidebarWidth}px` : '0px' }}
       >
         <div className="flex-1 overflow-y-auto px-4 py-8 md:px-8 lg:px-16 w-full">
-          
-          {/* Desktop sidebar toggle */}
-          <button
-            onClick={() => setIsDesktopSidebarOpen((prev) => !prev)}
-            title={isDesktopSidebarOpen ? 'Minimize Directory' : 'Expand Directory'}
-            className="fixed top-4 left-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors hidden lg:flex group"
-          >
-            {isDesktopSidebarOpen ? (
-              <PanelLeftClose className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            ) : (
-              <PanelLeftOpen className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            )}
-          </button>
-
           <div className="max-w-4xl mx-auto w-full relative">
             {children}
           </div>

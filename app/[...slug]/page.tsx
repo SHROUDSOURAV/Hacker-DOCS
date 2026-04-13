@@ -5,6 +5,7 @@ import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/atom-one-dark.css'; // Switch to a deeper hacker theme
 import { CodeBlock } from '@/components/CodeBlock';
 import path from 'path';
+import remarkAngleBracketPlaceholders from '@/lib/remarkAngleBracketPlaceholders';
 
 export function generateStaticParams() {
   const slugs = getAllMarkdownSlugs();
@@ -29,15 +30,29 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
   return (
     <article className="prose prose-neutral dark:prose-invert max-w-none">
       <Markdown 
-        remarkPlugins={[remarkGfm]} 
+        remarkPlugins={[remarkGfm, remarkAngleBracketPlaceholders]} 
         rehypePlugins={[rehypeHighlight]}
         components={{
           pre: ({ node, ...props }) => <CodeBlock {...props} />,
+          code: ({ className, children, ...props }) => {
+            const value = String(children ?? '').trim();
+            const isPlaceholder = /^<[^<>\n]+>$/.test(value);
+            return (
+              <code
+                {...props}
+                className={`${className ?? ''} ${isPlaceholder ? 'text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/30' : ''}`.trim()}
+              >
+                {children}
+              </code>
+            );
+          },
           table: ({ node, ...props }) => (
             <div className="w-full overflow-x-auto my-6 border border-border rounded-lg shadow-sm">
-              <table className="w-full text-sm text-left m-0" {...props} />
+              <table className="w-full min-w-full border-collapse text-sm text-left m-0" {...props} />
             </div>
           ),
+          th: ({ node, ...props }) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
+          td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
           img: ({ node, ...props }) => {
             let src = props.src || '';
             if (src && !src.startsWith('http') && !src.startsWith('/')) {
