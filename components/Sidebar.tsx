@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Folder, FileTerminal, ChevronDown, ChevronRight, Shield, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { Folder, FileTerminal, ChevronDown, ChevronRight, Shield, PanelLeftClose, PanelLeftOpen, Menu } from 'lucide-react';
 import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import type { FileNode } from '@/lib/markdown';
@@ -62,6 +62,14 @@ interface SidebarProps {
 export function Sidebar({ nodes, isOpen, setOpen, width, onResizeStart }: SidebarProps) {
   return (
     <>
+      <button
+        onClick={() => setOpen(!isOpen)}
+        title={isOpen ? 'Close Sidebar' : 'Open Sidebar'}
+        className="fixed top-4 right-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors lg:hidden"
+      >
+        <Menu className="w-5 h-5" />
+      </button>
+
       {!isOpen && (
         <button
           onClick={() => setOpen(true)}
@@ -91,13 +99,22 @@ export function Sidebar({ nodes, isOpen, setOpen, width, onResizeStart }: Sideba
           
           {/* Sidebar toggle button on desktop */}
           {setOpen && (
-             <button 
-               onClick={() => setOpen(!isOpen)}
-               className="relative z-10 p-1.5 border border-primary/20 hover:bg-primary/10 hover:border-primary/50 text-muted-foreground hover:text-primary rounded hidden lg:flex outline-none focus-visible:ring-1 focus-visible:ring-primary"
-               title={isOpen ? 'Minimize Sidebar' : 'Expand Sidebar'}
-             >
-               {isOpen ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeftOpen className="w-4 h-4" />}
-             </button>
+            <>
+              <button 
+                onClick={() => setOpen(!isOpen)}
+                className="relative z-10 p-1.5 border border-primary/20 hover:bg-primary/10 hover:border-primary/50 text-muted-foreground hover:text-primary rounded hidden lg:flex outline-none focus-visible:ring-1 focus-visible:ring-primary"
+                title={isOpen ? 'Minimize Sidebar' : 'Expand Sidebar'}
+              >
+                {isOpen ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeftOpen className="w-4 h-4" />}
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="relative z-10 p-1.5 border border-primary/20 hover:bg-primary/10 hover:border-primary/50 text-muted-foreground hover:text-primary rounded lg:hidden outline-none focus-visible:ring-1 focus-visible:ring-primary"
+                title="Close Sidebar"
+              >
+                <PanelLeftClose className="w-4 h-4" />
+              </button>
+            </>
           )}
         </div>
         
