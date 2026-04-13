@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Folder, FileTerminal, ChevronDown, ChevronRight, Shield, PanelLeftClose, PanelLeftOpen, Menu } from 'lucide-react';
+import { Folder, FileTerminal, ChevronDown, ChevronRight, Shield, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import type { FileNode } from '@/lib/markdown';
@@ -64,10 +64,10 @@ export function Sidebar({ nodes, isOpen, setOpen, width, onResizeStart }: Sideba
     <>
       <button
         onClick={() => setOpen(!isOpen)}
-        title={isOpen ? 'Close Sidebar' : 'Open Sidebar'}
-        className="fixed top-4 right-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors lg:hidden"
+        title={isOpen ? 'Minimize Sidebar' : 'Expand Sidebar'}
+        className="fixed top-4 left-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors lg:hidden"
       >
-        <Menu className="w-5 h-5" />
+        {isOpen ? <PanelLeftClose className="w-5 h-5" /> : <PanelLeftOpen className="w-5 h-5" />}
       </button>
 
       {!isOpen && (
@@ -106,13 +106,6 @@ export function Sidebar({ nodes, isOpen, setOpen, width, onResizeStart }: Sideba
                 title={isOpen ? 'Minimize Sidebar' : 'Expand Sidebar'}
               >
                 {isOpen ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeftOpen className="w-4 h-4" />}
-              </button>
-              <button
-                onClick={() => setOpen(false)}
-                className="relative z-10 p-1.5 border border-primary/20 hover:bg-primary/10 hover:border-primary/50 text-muted-foreground hover:text-primary rounded lg:hidden outline-none focus-visible:ring-1 focus-visible:ring-primary"
-                title="Close Sidebar"
-              >
-                <PanelLeftClose className="w-4 h-4" />
               </button>
             </>
           )}
