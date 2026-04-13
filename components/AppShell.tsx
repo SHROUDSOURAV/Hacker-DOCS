@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { FileNode } from '@/lib/markdown';
-import { PanelLeftOpen } from 'lucide-react';
+import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 
 export function AppShell({ nodes, children }: { nodes: FileNode[], children: React.ReactNode }) {
   // Mobile sidebar is naturally closed, Desktop is naturally open
@@ -22,16 +22,18 @@ export function AppShell({ nodes, children }: { nodes: FileNode[], children: Rea
       >
         <div className="flex-1 overflow-y-auto px-4 py-8 md:px-8 lg:px-16 w-full">
           
-          {/* Top floating "window tab" button to reopen when minimized on desktop */}
-          {!isDesktopSidebarOpen && (
-            <button 
-              onClick={() => setIsDesktopSidebarOpen(true)}
-              title="Expand Directory"
-              className="fixed top-4 left-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors hidden lg:flex group"
-            >
+          {/* Desktop sidebar toggle */}
+          <button
+            onClick={() => setIsDesktopSidebarOpen((prev) => !prev)}
+            title={isDesktopSidebarOpen ? 'Minimize Directory' : 'Expand Directory'}
+            className="fixed top-4 left-4 z-50 p-2 bg-[#0a0a0a] text-primary rounded-md border border-primary/30 shadow-[0_0_10px_hsl(133_100%_45%_/_0.2)] hover:bg-primary/10 transition-colors hidden lg:flex group"
+          >
+            {isDesktopSidebarOpen ? (
+              <PanelLeftClose className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            ) : (
               <PanelLeftOpen className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </button>
-          )}
+            )}
+          </button>
 
           <div className="max-w-4xl mx-auto w-full relative">
             {children}

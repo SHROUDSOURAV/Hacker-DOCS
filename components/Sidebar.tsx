@@ -7,7 +7,7 @@ import { useState } from 'react';
 import type { FileNode } from '@/lib/markdown';
 
 function TreeNode({ node, level = 0 }: { node: FileNode; level?: number }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isActive = pathname === node.path || pathname === encodeURI(node.path);
 
@@ -86,7 +86,7 @@ export function Sidebar({ nodes, isDesktopOpen = true, setDesktopOpen }: Sidebar
             <span className="font-mono tracking-widest text-[15px]">HACKER_DOCS</span>
           </Link>
           
-          {/* Hide button on desktop */}
+          {/* Collapse button on desktop */}
           {setDesktopOpen && (
              <button 
                onClick={() => setDesktopOpen(false)}
