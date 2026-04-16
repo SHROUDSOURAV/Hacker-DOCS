@@ -53,18 +53,15 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
           ),
           th: ({ node, ...props }) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
           td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
-          img: ({ node, ...props }) => {
+            img: ({ node, ...props }) => {
             let src = props.src || '';
             if (src && !src.startsWith('http') && !src.startsWith('/')) {
               const dirParts = decodedSlug.slice(0, -1);
               const resolvedPath = path.posix.join('/', ...dirParts, src);
-              src = `/assets${resolvedPath}`;
+              src = `/api/assets${resolvedPath}`;
             } else if (src.startsWith('/')) {
-               // if it starts with /api/assets, fix it
-               if (src.startsWith('/api/assets')) {
-                  src = src.replace('/api/assets', '/assets');
-               } else if (!src.startsWith('/assets')) {
-                  src = `/assets${src}`;
+               if (!src.startsWith('/api/assets')) {
+                  src = `/api/assets${src}`;
                }
             }
             return (

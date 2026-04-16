@@ -32,8 +32,8 @@ export function getSidebarTree(dir = ROOT_DIR, basePath = ''): FileNode[] {
             children,
           });
         }
-      } else if (file.endsWith('.md') && file.toLowerCase() !== 'readme.md') {
-        const slug = file.replace(/\.md$/, '');
+      } else if ((file.endsWith('.md') || file.endsWith('.mdx')) && file.toLowerCase() !== 'readme.md') {
+        const slug = file.replace(/\.(md|mdx)$/, '');
         nodes.push({
           name: slug,
           path: `${basePath}/${slug}`,
@@ -59,8 +59,8 @@ export function getAllMarkdownSlugs(dir = ROOT_DIR, basePath = ''): string[][] {
 
       if (stat.isDirectory()) {
         slugs = slugs.concat(getAllMarkdownSlugs(fullPath, `${basePath}/${file}`));
-      } else if (file.endsWith('.md') && file.toLowerCase() !== 'readme.md') {
-        const slug = file.replace(/\.md$/, '');
+      } else if ((file.endsWith('.md') || file.endsWith('.mdx')) && file.toLowerCase() !== 'readme.md') {
+        const slug = file.replace(/\.(md|mdx)$/, '');
         // Break down path into array of slugs
         const parts = `${basePath}/${slug}`.split('/').filter(Boolean);
         slugs.push(parts);
@@ -73,10 +73,16 @@ export function getAllMarkdownSlugs(dir = ROOT_DIR, basePath = ''): string[][] {
 }
 
 export function getMarkdownContent(slugParts: string[]): string {
-  const relPath = slugParts.join('/') + '.md';
-  const fullPath = path.join(ROOT_DIR, relPath);
+  const relPath = slugParts.join('/');
+  const fullPathMd = path.join(ROOT_DIR, relPath + '.md');
+  const fullPathMdx = path.join(ROOT_DIR, relPath + '.mdx');
   try {
-    return fs.readFileSync(fullPath, 'utf-8');
+    if (fs.existsSync(fullPathMd)) {
+      return fs.readFileSync(fullPathMd, 'utf-8');
+    } else if (fs.existsSync(fullPathMdx)) {
+      return fs.readFileSync(fullPathMdx, 'utf-8');
+    }
+    return '';
   } catch (err) {
     return '';
   }

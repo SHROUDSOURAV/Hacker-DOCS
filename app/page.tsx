@@ -61,7 +61,26 @@ export default function Home() {
                 </div>
               ),
               th: ({ node, ...props }) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
-              td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />
+              td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
+              img: ({ node, ...props }) => {
+                let src = props.src || '';
+                if (src && !src.startsWith('http') && !src.startsWith('/')) {
+                  src = `/api/assets/${src}`;
+                } else if (src.startsWith('/')) {
+                   if (!src.startsWith('/api/assets')) {
+                      src = `/api/assets${src}`;
+                   }
+                }
+                return (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img 
+                    {...props} 
+                    src={src} 
+                    alt={props.alt || 'Documentation Image'} 
+                    className="max-w-full h-auto rounded-md border border-border shadow-sm my-4" 
+                  />
+                );
+              }
             }}
           >
             {content}
