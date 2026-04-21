@@ -53,16 +53,19 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
           ),
           th: ({ node, ...props }) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
           td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
-            img: ({ node, ...props }) => {
+          img: ({ node, ...props }) => {
             let src = props.src || '';
             if (src && !src.startsWith('http') && !src.startsWith('/')) {
               const dirParts = decodedSlug.slice(0, -1);
               const resolvedPath = path.posix.join('/', ...dirParts, src);
-              src = `/api/assets${resolvedPath}`;
+              // Use the static assets folder populated by copy-assets.mjs
+              src = `/assets${resolvedPath}`;
             } else if (src.startsWith('/')) {
-               if (!src.startsWith('/api/assets')) {
-                  src = `/api/assets${src}`;
-               }
+              // For absolute paths, check if they start with /assets or /api/assets
+              // If not, they are likely content-relative and should be under /assets
+              if (!src.startsWith('/assets') && !src.startsWith('/api/assets')) {
+                 src = `/assets${src}`;
+              }
             }
             return (
               /* eslint-disable-next-line @next/next/no-img-element */
