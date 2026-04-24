@@ -58,13 +58,17 @@ export default function MarkdownPage({ params }: { params: { slug: string[] } })
             if (src && !src.startsWith('http') && !src.startsWith('/')) {
               const dirParts = decodedSlug.slice(0, -1);
               const resolvedPath = path.posix.join('/', ...dirParts, src);
-              // Use the static assets folder populated by copy-assets.mjs
-              src = `/assets${resolvedPath}`;
+              // Use the api assets route to fetch from content directly
+              src = `/api/assets${resolvedPath}`;
             } else if (src.startsWith('/')) {
-              // For absolute paths, check if they start with /assets or /api/assets
-              // If not, they are likely content-relative and should be under /assets
-              if (!src.startsWith('/assets') && !src.startsWith('/api/assets')) {
-                 src = `/assets${src}`;
+              // For absolute paths, check if they start with /api/assets
+              // If not, they are likely content-relative and should be under /api/assets
+              if (!src.startsWith('/api/assets')) {
+                 if (src.startsWith('/assets/')) {
+                    src = src.replace('/assets/', '/api/assets/');
+                 } else {
+                    src = `/api/assets${src}`;
+                 }
               }
             }
             return (

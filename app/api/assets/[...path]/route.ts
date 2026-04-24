@@ -6,12 +6,7 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { path: string[] } }
 ) {
-  let filePath = path.join(process.cwd(), ...params.path);
-
-  // If not found in root, look in public/assets (where they are copied during build)
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(process.cwd(), 'public', 'assets', ...params.path);
-  }
+  const filePath = path.join(process.cwd(), 'content', ...params.path);
 
   if (!fs.existsSync(filePath)) {
     return new NextResponse('File not found', { status: 404 });

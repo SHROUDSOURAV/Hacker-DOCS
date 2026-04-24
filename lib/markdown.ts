@@ -10,7 +10,7 @@ export interface FileNode {
 
 // Ignore typical non-content directories
 const IGNORE_DIRS = ['.git', '.next', 'node_modules', '.obsidian', 'app', 'components', 'lib', 'public'];
-const ROOT_DIR = process.cwd();
+const ROOT_DIR = path.join(process.cwd(), 'content');
 
 export function getSidebarTree(dir = ROOT_DIR, basePath = ''): FileNode[] {
   let nodes: FileNode[] = [];
