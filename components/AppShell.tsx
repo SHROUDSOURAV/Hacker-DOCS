@@ -64,7 +64,7 @@ export function AppShell({ nodes, children }: { nodes: FileNode[], children: Rea
         style={{ marginLeft: isSidebarOpen && isDesktop ? `${sidebarWidth}px` : '0px' }}
       >
         <div className="flex-1 overflow-y-auto px-4 py-8 md:px-8 lg:px-16 w-full">
-          <div className="max-w-4xl mx-auto w-full relative">
+          <div className="max-w-3xl mx-auto w-full relative">
             {children}
           </div>
         </div>

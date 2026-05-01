@@ -89,8 +89,11 @@
   color: hsl(var(--primary));
 }
 
-.prose pre {
+.prose pre,
+.prose pre code {
   white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .prose a {

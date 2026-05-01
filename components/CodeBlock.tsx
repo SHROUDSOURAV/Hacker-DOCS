@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { Check, Copy, Terminal } from 'lucide-react';
 
-interface CodeBlockProps {
+interface CodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
+  node?: any;
   children?: React.ReactNode;
   className?: string;
 }

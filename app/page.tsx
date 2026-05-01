@@ -36,14 +36,14 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="prose prose-neutral dark:prose-invert max-w-none">
+      <div className="prose prose-neutral dark:prose-invert max-w-3xl mx-auto w-full">
         {content ? (
           <Markdown
             remarkPlugins={[remarkGfm, remarkAngleBracketPlaceholders]}
             rehypePlugins={[rehypeHighlight]}
             components={{
               pre: ({ node, ...props }) => <CodeBlock {...props} />,
-              code: ({ className, children, ...props }) => {
+              code: ({ node, className, children, ...props }: any) => {
                 const value = String(children ?? '').trim();
                 const isPlaceholder = /^<[^<>\n]+>$/.test(value);
                 return (
@@ -55,14 +55,14 @@ export default function Home() {
                   </code>
                 );
               },
-              table: ({ node, ...props }) => (
+              table: ({ node, ...props }: any) => (
                 <div className="w-full overflow-x-auto my-6 border border-border rounded-lg shadow-sm">
                   <table className="w-full min-w-full border-collapse text-sm text-left m-0" {...props} />
                 </div>
               ),
-              th: ({ node, ...props }) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
-              td: ({ node, ...props }) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
-              img: ({ node, ...props }) => {
+              th: ({ node, ...props }: any) => <th className="border border-border bg-secondary text-primary px-3 py-2 font-mono" {...props} />,
+              td: ({ node, ...props }: any) => <td className="border border-border px-3 py-2 text-foreground" {...props} />,
+              img: ({ node, ...props }: any) => {
                 let src = props.src || '';
                 if (src && !src.startsWith('http') && !src.startsWith('/')) {
                   src = `/api/assets/${src}`;
