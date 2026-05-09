@@ -1,0 +1,1435 @@
+[
+  {
+    "name": "Penetration Testing",
+    "path": "Penetration Testing",
+    "type": "directory",
+    "children": [
+      {
+        "name": "HTB",
+        "path": "Penetration Testing/HTB",
+        "type": "directory",
+        "children": [
+          {
+            "name": "File Transfers",
+            "path": "Penetration Testing/HTB/File Transfers",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Linux to Linux Transfer Methods.md",
+                "path": "Penetration Testing/HTB/File Transfers/Linux to Linux Transfer Methods.md",
+                "type": "file"
+              },
+              {
+                "name": "Linux to Windows Transfer Methods.md",
+                "path": "Penetration Testing/HTB/File Transfers/Linux to Windows Transfer Methods.md",
+                "type": "file"
+              },
+              {
+                "name": "Windows to Linux Transfer Methods.md",
+                "path": "Penetration Testing/HTB/File Transfers/Windows to Linux Transfer Methods.md",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "Footprinting",
+            "path": "Penetration Testing/HTB/Footprinting",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Assessement",
+                "path": "Penetration Testing/HTB/Footprinting/Assessement",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Easy Lab",
+                    "path": "Penetration Testing/HTB/Footprinting/Assessement/Easy Lab",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Easy Lab.md",
+                        "path": "Penetration Testing/HTB/Footprinting/Assessement/Easy Lab/Easy Lab.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hard Lab",
+                    "path": "Penetration Testing/HTB/Footprinting/Assessement/Hard Lab",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Hard Lab.md",
+                        "path": "Penetration Testing/HTB/Footprinting/Assessement/Hard Lab/Hard Lab.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Medium Lab",
+                    "path": "Penetration Testing/HTB/Footprinting/Assessement/Medium Lab",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Medium Lab.md",
+                        "path": "Penetration Testing/HTB/Footprinting/Assessement/Medium Lab/Medium Lab.md",
+                        "type": "file"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "DNS",
+                "path": "Penetration Testing/HTB/Footprinting/DNS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/DNS/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/DNS/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "FTP",
+                "path": "Penetration Testing/HTB/Footprinting/FTP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/FTP/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/FTP/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "IMAP POP3",
+                "path": "Penetration Testing/HTB/Footprinting/IMAP POP3",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/IMAP POP3/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/IMAP POP3/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "MSSQL",
+                "path": "Penetration Testing/HTB/Footprinting/MSSQL",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/MSSQL/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/MSSQL/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "MySQL",
+                "path": "Penetration Testing/HTB/Footprinting/MySQL",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/MySQL/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/MySQL/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "NFS",
+                "path": "Penetration Testing/HTB/Footprinting/NFS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/NFS/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/NFS/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Oracle TNS",
+                "path": "Penetration Testing/HTB/Footprinting/Oracle TNS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/Oracle TNS/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/Oracle TNS/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "RDP",
+                "path": "Penetration Testing/HTB/Footprinting/RDP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/RDP/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/RDP/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "SMB",
+                "path": "Penetration Testing/HTB/Footprinting/SMB",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SMB/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SMB/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "SMTP",
+                "path": "Penetration Testing/HTB/Footprinting/SMTP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SMTP/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SMTP/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "SNMP",
+                "path": "Penetration Testing/HTB/Footprinting/SNMP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SNMP/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SNMP/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "SSH",
+                "path": "Penetration Testing/HTB/Footprinting/SSH",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SSH/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/SSH/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "WinRM",
+                "path": "Penetration Testing/HTB/Footprinting/WinRM",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Footprinting/WinRM/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Footprinting/WinRM/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Metasploit",
+            "path": "Penetration Testing/HTB/Metasploit",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Meterpreter",
+                "path": "Penetration Testing/HTB/Metasploit/Meterpreter",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Meterpreter/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Meterpreter/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Modules",
+                "path": "Penetration Testing/HTB/Metasploit/Modules",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Modules/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Modules/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Payloads",
+                "path": "Penetration Testing/HTB/Metasploit/Payloads",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Payloads/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Payloads/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Sessions",
+                "path": "Penetration Testing/HTB/Metasploit/Sessions",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Sessions/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Metasploit/Sessions/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Introduction.md",
+                "path": "Penetration Testing/HTB/Metasploit/Introduction.md",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "Nmap",
+            "path": "Penetration Testing/HTB/Nmap",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Host Discovery",
+                "path": "Penetration Testing/HTB/Nmap/Host Discovery",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Nmap/Host Discovery/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Nmap/Host Discovery/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Labs",
+                "path": "Penetration Testing/HTB/Nmap/Labs",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Easy Lab.md",
+                    "path": "Penetration Testing/HTB/Nmap/Labs/Easy Lab.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Hard Lab.md",
+                    "path": "Penetration Testing/HTB/Nmap/Labs/Hard Lab.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Medium Lab.md",
+                    "path": "Penetration Testing/HTB/Nmap/Labs/Medium Lab.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Port Scanning",
+                "path": "Penetration Testing/HTB/Nmap/Port Scanning",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Nmap/Port Scanning/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Nmap/Port Scanning/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Saving Results",
+                "path": "Penetration Testing/HTB/Nmap/Saving Results",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Nmap/Saving Results/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Nmap/Saving Results/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Scripting Engine",
+                "path": "Penetration Testing/HTB/Nmap/Scripting Engine",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Nmap/Scripting Engine/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Nmap/Scripting Engine/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Service Enumeration",
+                "path": "Penetration Testing/HTB/Nmap/Service Enumeration",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Nmap/Service Enumeration/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Nmap/Service Enumeration/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Password Attacks",
+            "path": "Penetration Testing/HTB/Password Attacks",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Extracting Passwords",
+                "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "From LINUX",
+                    "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From LINUX",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From LINUX/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From LINUX/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "From NETWORK",
+                    "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From NETWORK",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From NETWORK/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From NETWORK/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "From WINDOWS",
+                    "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From WINDOWS",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From WINDOWS/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Extracting Passwords/From WINDOWS/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Offline Attacks",
+                "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Crack Protected Archives",
+                    "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Archives",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Archives/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Archives/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Crack Protected Files",
+                    "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Files",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Files/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Crack Protected Files/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hashcat",
+                    "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Hashcat",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Hashcat/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/Hashcat/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "John",
+                    "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/John",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/John/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Penetration Testing/HTB/Password Attacks/Offline Attacks/John/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Remote Attacks",
+                "path": "Penetration Testing/HTB/Password Attacks/Remote Attacks",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Penetration Testing/HTB/Password Attacks/Remote Attacks/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Penetration Testing/HTB/Password Attacks/Remote Attacks/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Web Pentesting",
+    "path": "Web Pentesting",
+    "type": "directory",
+    "children": [
+      {
+        "name": "HTB",
+        "path": "Web Pentesting/HTB",
+        "type": "directory",
+        "children": [
+          {
+            "name": "Client Side Attacks",
+            "path": "Web Pentesting/HTB/Client Side Attacks",
+            "type": "directory",
+            "children": [
+              {
+                "name": "XSS",
+                "path": "Web Pentesting/HTB/Client Side Attacks/XSS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Assessment",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Assessment",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Assessment.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Assessment/Assessment.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "DOM XSS",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/DOM XSS",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/DOM XSS/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/DOM XSS/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Phishing",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Phishing",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Phishing/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Phishing/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Reflected XSS",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Reflected XSS",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Reflected XSS/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Reflected XSS/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Session Hijacking",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Session Hijacking",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Session Hijacking/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Session Hijacking/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Stored XSS",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Stored XSS",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Stored XSS/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/Stored XSS/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "XSS Discovery",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/XSS Discovery",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/XSS Discovery/Commands.md",
+                        "type": "file"
+                      },
+                      {
+                        "name": "Theory and Solutions.md",
+                        "path": "Web Pentesting/HTB/Client Side Attacks/XSS/XSS Discovery/Theory and Solutions.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "XSS Definition.md",
+                    "path": "Web Pentesting/HTB/Client Side Attacks/XSS/XSS Definition.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Information Gathering - Web Edition",
+            "path": "Web Pentesting/HTB/Information Gathering - Web Edition",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Assessment",
+                "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Assessment",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Assessment.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Assessment/Assessment.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Crawling",
+                "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Crawling",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Crawling/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Crawling/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "DNS",
+                "path": "Web Pentesting/HTB/Information Gathering - Web Edition/DNS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/DNS/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/DNS/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Fingerprinting",
+                "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Fingerprinting",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Fingerprinting/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/Fingerprinting/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "WHOIS",
+                "path": "Web Pentesting/HTB/Information Gathering - Web Edition/WHOIS",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/WHOIS/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Information Gathering - Web Edition/WHOIS/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Server Side Attacks",
+            "path": "Web Pentesting/HTB/Server Side Attacks",
+            "type": "directory",
+            "children": [
+              {
+                "name": "SQL Injection",
+                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Assessment",
+                    "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/Assessment",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Assessment.md",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/Assessment/Assessment.md",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SQL Commands",
+                    "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Intro to MySQL",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Intro to MySQL",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "Commands.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Intro to MySQL/Commands.md",
+                            "type": "file"
+                          },
+                          {
+                            "name": "Theory and Solutions.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Intro to MySQL/Theory and Solutions.md",
+                            "type": "file"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Query Results",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Query Results",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "Commands.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Query Results/Commands.md",
+                            "type": "file"
+                          },
+                          {
+                            "name": "Theory and Solutions.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/Query Results/Theory and Solutions.md",
+                            "type": "file"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SQL Operators",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Operators",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "Commands.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Operators/Commands.md",
+                            "type": "file"
+                          },
+                          {
+                            "name": "Theory and Solutions.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Operators/Theory and Solutions.md",
+                            "type": "file"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SQL Statements",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Statements",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "Commands.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Statements/Commands.md",
+                            "type": "file"
+                          },
+                          {
+                            "name": "Theory and Solutions.md",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Commands/SQL Statements/Theory and Solutions.md",
+                            "type": "file"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SQL Injections",
+                    "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Commands",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "Blind SQLi",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi",
+                            "type": "directory",
+                            "children": [
+                              {
+                                "name": "Conditional Based.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi/Conditional Based.md",
+                                "type": "file"
+                              },
+                              {
+                                "name": "Conditional Error Based.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi/Conditional Error Based.md",
+                                "type": "file"
+                              },
+                              {
+                                "name": "Out of Band Interaction Based.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi/Out of Band Interaction Based.md",
+                                "type": "file"
+                              },
+                              {
+                                "name": "Time Delay Based.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi/Time Delay Based.md",
+                                "type": "file"
+                              },
+                              {
+                                "name": "Visible Error Based.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Blind SQLi/Visible Error Based.md",
+                                "type": "file"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Normal SQLi",
+                            "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Normal SQLi",
+                            "type": "directory",
+                            "children": [
+                              {
+                                "name": "Commands.md",
+                                "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Commands/Normal SQLi/Commands.md",
+                                "type": "file"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Theory.md",
+                        "path": "Web Pentesting/HTB/Server Side Attacks/SQL Injection/SQL Injections/Theory.md",
+                        "type": "file"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Using Web Proxies BURPSUITE",
+            "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Assessment",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Assessment",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Assessment.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Assessment/Assessment.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Burp Intruder",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Burp Intruder",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Burp Intruder/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Burp Intruder/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "BurpSuite SETUP",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/BurpSuite SETUP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "BurpSuite Setup.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/BurpSuite SETUP/BurpSuite Setup.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Encoding&Decoding",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Encoding&Decoding",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Encoding&Decoding/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Encoding&Decoding/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Intercepting Web Requests",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Intercepting Web Requests",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Intercepting Web Requests/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Questions.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Intercepting Web Requests/Theory and Questions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Intercepting Web Responses",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Intercepting Web Responses",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Intercepting Web Responses/Commands.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Proxying Tools",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Proxying Tools",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Proxying Tools/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Repeating Requests",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Repeating Requests",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Repeating Requests/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Repeating Requests/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Web Proxies",
+                "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Web Proxies",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Web Proxies.md",
+                    "path": "Web Pentesting/HTB/Using Web Proxies BURPSUITE/Web Proxies/Web Proxies.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Web Fuzzing",
+            "path": "Web Pentesting/HTB/Web Fuzzing",
+            "type": "directory",
+            "children": [
+              {
+                "name": "API Fuzzing",
+                "path": "Web Pentesting/HTB/Web Fuzzing/API Fuzzing",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/API Fuzzing/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/API Fuzzing/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Assessment",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Assessment",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Assessment.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Assessment/Assessment.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Directory and File Fuzzing",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Directory and File Fuzzing",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Directory and File Fuzzing/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Directory and File Fuzzing/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Filtering Fuzzing Output",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Filtering Fuzzing Output",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Filtering Fuzzing Output/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Filtering Fuzzing Output/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Parameter and Value Fuzzing",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Parameter and Value Fuzzing",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Parameter and Value Fuzzing/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Parameter and Value Fuzzing/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Validating Findings",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Validating Findings",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Question and Solution.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Validating Findings/Question and Solution.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Vhost and Subdomain Fuzzing",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Vhost and Subdomain Fuzzing",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Vhost and Subdomain Fuzzing/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Fuzzing/Vhost and Subdomain Fuzzing/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Fuzzing Definition.md",
+                "path": "Web Pentesting/HTB/Web Fuzzing/Fuzzing Definition.md",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "Web Requests CURL",
+            "path": "Web Pentesting/HTB/Web Requests CURL",
+            "type": "directory",
+            "children": [
+              {
+                "name": "CRUD API",
+                "path": "Web Pentesting/HTB/Web Requests CURL/CRUD API",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/CRUD API/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/CRUD API/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "GET request",
+                "path": "Web Pentesting/HTB/Web Requests CURL/GET request",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/GET request/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/GET request/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "HTTP",
+                "path": "Web Pentesting/HTB/Web Requests CURL/HTTP",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "HTTP headers",
+                "path": "Web Pentesting/HTB/Web Requests CURL/HTTP headers",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP headers/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP headers/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "HTTP requests and responses",
+                "path": "Web Pentesting/HTB/Web Requests CURL/HTTP requests and responses",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP requests and responses/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/HTTP requests and responses/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "POST",
+                "path": "Web Pentesting/HTB/Web Requests CURL/POST",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Commands.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/POST/Commands.md",
+                    "type": "file"
+                  },
+                  {
+                    "name": "Theory and Solutions.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/POST/Theory and Solutions.md",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Web Flaws",
+                "path": "Web Pentesting/HTB/Web Requests CURL/Web Flaws",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Types of Attacks.md",
+                    "path": "Web Pentesting/HTB/Web Requests CURL/Web Flaws/Types of Attacks.md",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

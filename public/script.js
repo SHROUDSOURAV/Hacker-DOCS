@@ -57,14 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fetch Tree
   async function fetchTree() {
     try {
-      const res = await fetch('/api/tree');
+      // Use relative path for tree.json
+      const res = await fetch('./tree.json');
       const tree = await res.json();
       navContainer.innerHTML = '';
       const ul = buildTreeUI(tree);
       navContainer.appendChild(ul);
     } catch (e) {
       console.error('Failed to load tree:', e);
-      navContainer.innerHTML = '<div style="color:var(--red);">Error loading files</div>';
+      navContainer.innerHTML = '<div style="color:var(--red);">Error loading files (Static mode)</div>';
     }
   }
 
@@ -93,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         li.appendChild(titleDiv);
         
         const childrenUl = buildTreeUI(node.children);
-        // Collapse by default
         childrenUl.style.display = 'none';
         li.appendChild(childrenUl);
 
@@ -125,49 +125,73 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function loadContent(path) {
+    if (!path) return;
+    
+    // Update hash without triggering hashchange
+    window.location.hash = path;
+    
     activePathSpan.textContent = path;
     markdownBody.innerHTML = '<div style="text-align:center;color:var(--text-muted);margin-top:50px;">Loading... ⚡</div>';
     
     try {
-      const res = await fetch(`/api/content?path=${encodeURIComponent(path)}`);
-      const data = await res.json();
-      
-      if (data.error) {
-        markdownBody.innerHTML = `<div style="color:var(--red);text-align:center;"><h2>Error</h2><p>${data.error}</p></div>`;
-        return;
-      }
+      const res = await fetch(`./content/${path}`);
+      if (!res.ok) throw new Error(`File not found: ${res.status}`);
+      let content = await res.text();
 
-      markdownBody.innerHTML = `<div class="fade-in">${data.html}</div>`;
+      const renderer = new marked.Renderer();
+      const folderPath = path.includes('/') ? path.split('/').slice(0, -1).join('/') : '';
       
+      renderer.image = ({ href, title, text }) => {
+        let finalHref = href;
+        if (finalHref && !finalHref.startsWith('http') && !finalHref.startsWith('/') && !finalHref.startsWith('./content/')) {
+          finalHref = `./content/${folderPath ? folderPath + '/' : ''}${finalHref}`;
+        }
+        let out = `<img src="${finalHref}" alt="${text}"`;
+        if (title) out += ` title="${title}"`;
+        out += '>';
+        return out;
+      };
+
+      content = content.replace(/!\[\[(.*?)\]\]/g, (match, p1) => {
+        const imgPath = `./content/${folderPath ? folderPath + '/' : ''}${p1}`;
+        return `![Obsidian Image](${imgPath})`;
+      });
+
+      // Parse markdown
+      const htmlContent = marked.parse(content, { renderer });
+      markdownBody.innerHTML = `<div class="fade-in">${htmlContent}</div>`;
+      
+      // Highlight and decorate code blocks
       decorateCodeBlocks();
 
     } catch (e) {
       console.error(e);
-      markdownBody.innerHTML = `<div style="color:var(--red);text-align:center;"><h2>Connection Error</h2><p>Could not fetch file.</p></div>`;
+      markdownBody.innerHTML = `<div style="color:var(--red);text-align:center;"><h2>Error</h2><p>${e.message}</p></div>`;
     }
   }
 
   function decorateCodeBlocks() {
     document.querySelectorAll('.markdown-body pre').forEach(pre => {
-      // Check if already decorated
+      const codeEl = pre.querySelector('code');
+      if (!codeEl) return;
+
+      // Apply highlighting
+      hljs.highlightElement(codeEl);
+
       if (pre.parentElement.classList.contains('code-content')) return;
 
-      const codeEl = pre.querySelector('code');
       let lang = 'bash';
-      if (codeEl && codeEl.className) {
+      if (codeEl.className) {
         const match = codeEl.className.match(/language-(\w+)/);
         if (match) lang = match[1];
       }
 
       const wrapper = document.createElement('div');
       wrapper.className = 'custom-code-block';
-
       const header = document.createElement('div');
       header.className = 'code-header';
-
       const leftGroup = document.createElement('div');
       leftGroup.className = 'left-group';
-
       const windowControls = document.createElement('div');
       windowControls.className = 'window-controls';
       windowControls.innerHTML = '<div class="ctrl red"></div><div class="ctrl yellow"></div><div class="ctrl green"></div>';
@@ -184,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
       copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> <span>COPY</span>`;
       
       copyBtn.onclick = () => {
-        const textToCopy = codeEl ? codeEl.innerText : pre.innerText;
+        const textToCopy = codeEl.innerText;
         navigator.clipboard.writeText(textToCopy);
         copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="copied" style="color:var(--green)">COPIED</span>`;
         setTimeout(() => {
@@ -194,11 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       header.appendChild(leftGroup);
       header.appendChild(copyBtn);
-
       wrapper.appendChild(header);
-      
       pre.parentNode.insertBefore(wrapper, pre);
-      
       const codeContent = document.createElement('div');
       codeContent.className = 'code-content';
       codeContent.appendChild(pre);
@@ -206,29 +227,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  fetchTree();
-
-  let lastTreeSource = "";
-  setInterval(async () => {
-      try {
-          const res = await fetch('/api/tree');
-          const txt = await res.text();
-          if (lastTreeSource && lastTreeSource !== txt) {
-              const activeEl = document.querySelector('.nav-title.active');
-              const activePath = activeEl ? activeEl.dataset.path : null;
-              
-              lastTreeSource = txt;
-              navContainer.innerHTML = '';
-              const ul = buildTreeUI(JSON.parse(txt));
-              navContainer.appendChild(ul);
-
-              if (activePath) {
-                  const newActive = document.querySelector(`.nav-title[data-path="${activePath}"]`);
-                  if (newActive) newActive.classList.add('active');
-              }
-          } else {
-              lastTreeSource = txt;
+  // Handle Initial Hash
+  async function handleHash() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      loadContent(decodeURIComponent(hash));
+      // Try to highlight in sidebar
+      setTimeout(() => {
+        const titleEl = document.querySelector(`.nav-title[data-path="${decodeURIComponent(hash)}"]`);
+        if (titleEl) {
+          titleEl.classList.add('active');
+          // Expand parents
+          let parent = titleEl.parentElement.parentElement; // UL
+          while (parent && parent.classList.contains('nav-tree')) {
+            parent.style.display = 'block';
+            const folderTitle = parent.previousElementSibling;
+            if (folderTitle && folderTitle.classList.contains('nav-title')) {
+              const icon = folderTitle.querySelector('.icon');
+              if (icon) icon.textContent = '📂';
+            }
+            parent = parent.parentElement.parentElement;
           }
-      } catch(e){}
-  }, 5000);
+        }
+      }, 500);
+    }
+  }
+
+  fetchTree().then(() => {
+    handleHash();
+  });
+
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) loadContent(decodeURIComponent(hash));
+  });
 });
