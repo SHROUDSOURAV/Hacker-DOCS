@@ -12,7 +12,8 @@ app.use(express.static('public'));
 
 const contentDir = path.join(__dirname, 'content');
 
-// Serve all other files transparently (for images/assets)
+// Serve content at /content/ (used by script.js fetch calls) and /files/ (legacy)
+app.use('/content', express.static(contentDir));
 app.use('/files', express.static(contentDir));
 
 // Register NASM as x86asm for highlight.js to support specific code blocks
