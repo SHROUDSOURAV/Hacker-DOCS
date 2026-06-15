@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `![Obsidian Image](${imgPath})`;
       });
 
-      // Parse markdown
-      const htmlContent = marked.parse(content, { renderer });
+      // Parse markdown with GFM enabled (required for tables)
+      const htmlContent = marked.parse(content, { renderer, gfm: true, breaks: false });
       markdownBody.innerHTML = `<div class="fade-in">${htmlContent}</div>`;
       
       // Highlight and decorate code blocks

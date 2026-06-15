@@ -255,6 +255,69 @@ body {
   border-radius: 0 6px 6px 0;
 }
 
+/* TABLE STYLES */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.markdown-body table thead {
+  background-color: var(--bg-tertiary);
+}
+
+.markdown-body table thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.markdown-body table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s ease;
+}
+
+.markdown-body table tbody tr:nth-child(even) {
+  background-color: rgba(22, 27, 34, 0.6);
+}
+
+.markdown-body table tbody tr:hover {
+  background-color: rgba(47, 129, 247, 0.08);
+}
+
+.markdown-body table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.markdown-body table td {
+  padding: 10px 16px;
+  color: var(--text-primary);
+  vertical-align: top;
+  border-right: 1px solid var(--border-color);
+}
+
+.markdown-body table td:last-child {
+  border-right: none;
+}
+
+.markdown-body table th:not(:last-child) {
+  border-right: 1px solid var(--border-color);
+}
+
 .markdown-body code:not(pre code) {
   background-color: rgba(240, 246, 252, 0.15);
   padding: 0.2em 0.4em;
