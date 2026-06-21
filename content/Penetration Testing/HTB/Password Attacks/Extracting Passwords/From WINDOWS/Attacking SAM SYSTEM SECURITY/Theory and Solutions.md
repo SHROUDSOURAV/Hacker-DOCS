@@ -1,11 +1,10 @@
 
-
 ## Windows Authentication Process
 
 
 ### Windows Authentication Process Diagram
 
-![Windows Authentication Process Diagram](./Images/img1.png)
+![Windows Authentication Process Diagram](content/Penetration%20Testing/HTB/Password%20Attacks/Extracting%20Passwords/From%20WINDOWS/Attacking%20SAM%20SYSTEM%20SECURITY/Images/img1.png)
 
 ### LSA
 

